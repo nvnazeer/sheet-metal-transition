@@ -9,6 +9,7 @@
 !.streamlit/
 !.streamlit/config.toml
 !.streamlit/credentials.toml
+!runtime.txt
 
 # Never commit credentials, logs, or trading files
 *.json

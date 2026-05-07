@@ -58,7 +58,7 @@ st.set_page_config(
     page_title="Sheet Metal Transition",
     page_icon="⚙",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="auto",
     menu_items={
         "Get Help":    None,
         "Report a bug": None,
@@ -112,6 +112,21 @@ st.markdown("""
   .app-header p  { color: #666; font-size: 0.9rem; }
 </style>
 """, unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════════
+#  Top navigation
+# ══════════════════════════════════════════════════════════════════
+nav1, nav2 = st.columns(2)
+with nav1:
+    st.page_link("sheet_metal_app.py",
+                 label="⚙ Sheet Metal Development",
+                 icon="⚙", use_container_width=True)
+with nav2:
+    st.page_link("pages/2_Transition_Calculator.py",
+                 label="📐 Transition Calculator",
+                 icon="📐", use_container_width=True)
+
+st.divider()
 
 # ══════════════════════════════════════════════════════════════════
 #  Header

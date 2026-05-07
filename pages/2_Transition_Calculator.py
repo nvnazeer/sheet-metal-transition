@@ -338,6 +338,19 @@ div[data-testid="stButton"]>button   { height:46px; font-size:15px; }
 </style>
 """, unsafe_allow_html=True)
 
+# ── Navigation ───────────────────────────────────────────────────
+nav1, nav2 = st.columns(2)
+with nav1:
+    st.page_link("sheet_metal_app.py",
+                 label="⚙ Sheet Metal Development",
+                 icon="⚙", use_container_width=True)
+with nav2:
+    st.page_link("pages/2_Transition_Calculator.py",
+                 label="📐 Transition Calculator",
+                 icon="📐", use_container_width=True)
+
+st.divider()
+
 st.markdown("## 📐 Transition Calculator")
 st.caption("True-length development values: C · J · F · L0..Ln  |  Quarter-development diagram")
 

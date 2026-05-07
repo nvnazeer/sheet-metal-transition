@@ -73,15 +73,29 @@ st.set_page_config(
 # ── Mobile-friendly CSS ────────────────────────────────────────────
 st.markdown("""
 <style>
-  /* ── Hide Streamlit branding, footer, GitHub links ── */
-  footer                          { visibility: hidden !important; height: 0; }
-  #MainMenu                       { visibility: hidden !important; }
-  header[data-testid="stHeader"]  { background: transparent; }
-  div[data-testid="stDecoration"] { display: none !important; }
-  div[data-testid="stToolbar"]    { display: none !important; }
+  /* ── Hide Streamlit branding, footer, GitHub badge ── */
+  footer                              { visibility: hidden !important; height: 0; }
+  #MainMenu                           { visibility: hidden !important; }
+  header[data-testid="stHeader"]      { background: transparent; }
+  div[data-testid="stDecoration"]     { display: none !important; }
+  div[data-testid="stToolbar"]        { display: none !important; }
+  div[data-testid="stToolbarActions"] { display: none !important; }
+  #stDecoration                       { display: none !important; }
+  /* Badge selectors — all known Streamlit Cloud versions */
   .viewerBadge_container__1QSob  { display: none !important; }
   .styles_viewerBadge__1yB5_     { display: none !important; }
-  #stDecoration                   { display: none !important; }
+  [class*="viewerBadge"]         { display: none !important; }
+  [class*="badge_container"]     { display: none !important; }
+  [class*="BadgeContainer"]      { display: none !important; }
+  /* Nuclear option — white overlay covering bottom-right corner */
+  body::after {
+    content: "";
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 260px; height: 52px;
+    background: white;
+    z-index: 99999;
+  }
 
   /* Larger touch targets on mobile */
   div[data-testid="stNumberInput"] input  { font-size: 17px !important; height: 44px; }

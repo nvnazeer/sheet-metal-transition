@@ -311,13 +311,23 @@ st.set_page_config(
 # ── Hide Streamlit branding ───────────────────────────────────────
 st.markdown("""
 <style>
-  footer                          { visibility: hidden !important; height: 0; }
-  #MainMenu                       { visibility: hidden !important; }
-  div[data-testid="stDecoration"] { display: none !important; }
-  div[data-testid="stToolbar"]    { display: none !important; }
-  .viewerBadge_container__1QSob  { display: none !important; }
-  .styles_viewerBadge__1yB5_     { display: none !important; }
-  #stDecoration                   { display: none !important; }
+  footer                              { visibility: hidden !important; height: 0; }
+  #MainMenu                           { visibility: hidden !important; }
+  div[data-testid="stDecoration"]     { display: none !important; }
+  div[data-testid="stToolbar"]        { display: none !important; }
+  div[data-testid="stToolbarActions"] { display: none !important; }
+  #stDecoration                       { display: none !important; }
+  [class*="viewerBadge"]             { display: none !important; }
+  [class*="badge_container"]         { display: none !important; }
+  [class*="BadgeContainer"]          { display: none !important; }
+  body::after {
+    content: "";
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 260px; height: 52px;
+    background: white;
+    z-index: 99999;
+  }
 </style>
 """, unsafe_allow_html=True)
 
